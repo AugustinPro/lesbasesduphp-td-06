@@ -3,6 +3,18 @@
 // déclaration de la variable lyrics qui doit être sur plusieurs ligne comme sur le doc
 
  // votre code ici
+ $lyrics = "Hello, Dolly\nWell, hello, Dolly\nIt's so nice to have you back where you belong\nYou're lookin' swell, Dolly\nI can tell, Dolly\nYou're still glowin', you're still crowin'\nYou're still goin' strong\nI feel the room swayin'\nWhile the band's playin'\nOne of our old favorite songs from way back when\nSo, take her wrap, fellas\nDolly, never go away again\nHello, Dolly\nWell, hello, Dolly\nIt's so nice to have you back where you belong\nYou're lookin' swell, Dolly\nI can tell, Dolly\nYou're still glowin', you're still crowin'\nYou're still goin' strong\nI feel the room swayin'\nWhile the band's playin'\nOne of our old favorite songs from way back when\nSo, golly, gee, fellas\nHave a little faith in me, fellas\nDolly, never go away\nPromise, you'll never go away\nDolly'll never go away again";
+
+ function getLyricsList($input) {
+     $verses = explode("\n",$input);
+     return $verses;
+ }
+
+ function getRandLyric($input) {
+     $num = rand(0,count($input));
+     return $input[$num];
+ }
+
 
 /**
  * fonction qui permet de transformer une chaine en un table de sous chaines.
@@ -44,6 +56,11 @@
                 <p>Hello, Dolly</p>
                 <footer><cite>Louis Armstrong</cite> - 1964</footer>
             </blockquote>
+            <pre>  
+                <?php //print_r(getLyricsList($lyrics))
+                        echo getRandLyric(getLyricsList($lyrics));
+                ?>
+            </pre>
         </main>
         <footer id="site-footer">
             <p>Crédit image <a href='https://www.freepik.com/vectors/background'>Background vector created by starline - www.freepik.com</a></p>
