@@ -6,13 +6,13 @@
  $lyrics = "Hello, Dolly\nWell, hello, Dolly\nIt's so nice to have you back where you belong\nYou're lookin' swell, Dolly\nI can tell, Dolly\nYou're still glowin', you're still crowin'\nYou're still goin' strong\nI feel the room swayin'\nWhile the band's playin'\nOne of our old favorite songs from way back when\nSo, take her wrap, fellas\nDolly, never go away again\nHello, Dolly\nWell, hello, Dolly\nIt's so nice to have you back where you belong\nYou're lookin' swell, Dolly\nI can tell, Dolly\nYou're still glowin', you're still crowin'\nYou're still goin' strong\nI feel the room swayin'\nWhile the band's playin'\nOne of our old favorite songs from way back when\nSo, golly, gee, fellas\nHave a little faith in me, fellas\nDolly, never go away\nPromise, you'll never go away\nDolly'll never go away again";
 
  function getLyricsList($input) {
-     $verses = explode("\n",$input);
-     return $verses;
+     $verses = explode("\n",$input);        //seperates the whole text into an array using the \n seperator
+     return $verses;                        //returns this array
  }
 
  function getRandLyric($input) {
-     $num = rand(0,count($input));
-     return $input[$num];
+     $num = rand(0,count($input)-1);          //rng between 0 and number of lines in the song
+     return $input[$num];                   //returns the (random) line of the song inputed to the function
  }
 
 
@@ -57,8 +57,9 @@
                 <footer><cite>Louis Armstrong</cite> - 1964</footer>
             </blockquote>
             <pre>  
-                <?php //print_r(getLyricsList($lyrics))
-                        echo getRandLyric(getLyricsList($lyrics));
+                <?php   //print_r(getLyricsList($lyrics))
+                        $randLyric = getLyricsList($lyrics);    //put the lyric array in a variable
+                        echo getRandLyric($randLyric);          //prints a random line from the given array
                 ?>
             </pre>
         </main>
